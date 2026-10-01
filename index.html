@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Proficient Pravin</title>
+  <link rel="icon" href="mariochar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="stage" data-state="intro">
+    <canvas id="game"></canvas>
+
+    <!-- Landing / intro page -->
+    <section id="intro" class="screen">
+      <div class="intro-left">
+        <h1 class="logo"><span class="l1">PROFICIENT</span><span class="l2">PRAVIN</span></h1>
+        <p class="tagline">SUPER ADVENTURE</p>
+        <button id="startBtn" class="btn btn-primary">&#9654; START GAME</button>
+        <p class="high">HIGH SCORE <b id="introHigh">000000</b></p>
+        <p class="hint">
+          <kbd>&larr;</kbd> <kbd>&rarr;</kbd> MOVE &nbsp; <kbd>SPACE</kbd> JUMP<br>
+          <kbd>SHIFT</kbd> RUN &nbsp; <kbd>P</kbd> PAUSE &nbsp; <kbd>M</kbd> MUTE
+        </p>
+      </div>
+      <div class="intro-right">
+        <canvas id="heroCanvas"></canvas>
+      </div>
+    </section>
+
+    <!-- Pause -->
+    <section id="pause" class="screen overlay hidden">
+      <h2>PAUSED</h2>
+      <button id="resumeBtn" class="btn btn-primary">&#9654; RESUME</button>
+      <button id="quitBtn" class="btn">HOME</button>
+    </section>
+
+    <!-- Game over -->
+    <section id="gameover" class="screen overlay hidden">
+      <h2>GAME OVER</h2>
+      <p id="newRecord" class="record hidden">&#9733; NEW HIGH SCORE &#9733;</p>
+      <p class="stat">SCORE <b id="finalScore">000000</b></p>
+      <p class="stat">HIGH SCORE <b id="finalHigh">000000</b></p>
+      <button id="againBtn" class="btn btn-primary">&#8635; PLAY AGAIN</button>
+      <button id="homeBtn" class="btn">HOME</button>
+    </section>
+
+    <!-- Small buttons shown while playing -->
+    <div id="topBtns">
+      <button id="pauseBtn" title="Pause (P)">II</button>
+      <button id="muteBtn" title="Mute (M)">&#9835;</button>
+    </div>
+
+    <!-- On-screen controls for phones / tablets -->
+    <div id="touch">
+      <button data-key="left">&#9664;</button>
+      <button data-key="right">&#9654;</button>
+      <button data-key="jump" class="jump">&#9650;</button>
+    </div>
+  </div>
+  <p id="rotateHint">Rotate your phone for a bigger screen &#8635;</p>
+
+  <script src="js/audio.js"></script>
+  <script src="js/level.js"></script>
+  <script src="js/sprites.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
